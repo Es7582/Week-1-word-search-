@@ -103,20 +103,30 @@
             selectedCells.forEach(cell => cell.classList.remove("selected"));
             selectedCells = [];
         }
+function isStraightLine(cells) {
+    if (cells.length < 2) return true;
+    const sameRow = cells.every(cell => cell.dataset.row === cells[0].dataset.row);
+    const sameCol = cells.every(cell => cell.dataset.col === cells[0].dataset.col);
+    return sameRow || sameCol;
+}
 
         function checkWord() {
-            const selectedWord = selectedCells.map(cell => cell.textContent).join("").toLowerCase();
-            const reversedWord = selectedWord.split("").reverse().join("");
-            if (words.includes(selectedWord) || words.includes(reversedWord)) {
-                selectedCells.forEach(cell => {
-                    cell.classList.remove("selected");
-                    cell.classList.add("found");
-                });
-                markWordFound(selectedWord);
-            } else {
-                clearSelection();
-            }
-        }
+    if (!isStraightLine(selectedCells)) {
+        clearSelection();
+        return;
+    }
+    const selectedWord = selectedCells.map(cell => cell.textContent).join("").toLowerCase();
+    const reversedWord = selectedWord.split("").reverse().join("");
+    if (words.includes(selectedWord) || words.includes(reversedWord)) {
+        selectedCells.forEach(cell => {
+            cell.classList.remove("selected");
+            cell.classList.add("found");
+        });
+        markWordFound(selectedWord);
+    } else {
+        clearSelection();
+    }
+}
 
         function markWordFound(word) {
             const wordItems = document.querySelectorAll("#word-list span");
