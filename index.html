@@ -1,6 +1,4 @@
-
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -35,21 +33,21 @@
         ];
 
         const gridData = [
-            "cafrptleaderuak".split(""),
-            "rcigsarburnoutg".split(""),
-            "efbracrufuqinyr".split(""),
-            "sipefrutssfsfrj".split(""),
-            "cnkseytlntcrsix".split(""),
-            "uslitgevtetdefi".split(""),
-            "etxlyibzeurecss".split(""),
-            "viiiboundariest".split(""),
-            "cniempgczedewkh".split(""),
-            "ucrntlllenergyv".split(""),
-            "ytpcdadowntimew".split(""),
-            "sjhennmehumantn".split(""),
-            "qwellbeingqbeee".split(""),
-            "svpsychological".split(""),
-            "fkuipwchangepmj".split("")
+            ['c','a','f','r','p','t','l','e','a','d','e','r','u','a','k'],
+            ['r','e','s','c','u','e','w','s','a','f','e','t','y','g','n'],
+            ['e','n','e','r','g','y','t','e','a','m','z','q','i','n','y'],
+            ['s','i','p','e','f','r','e','s','t','s','f','s','f','r','j'],
+            ['c','u','l','t','u','r','e','t','l','n','t','c','r','s','i'],
+            ['u','s','l','i','t','g','e','v','t','e','t','d','e','f','i'],
+            ['b','o','u','n','d','a','r','i','e','s','e','x','a','m','p'],
+            ['p','s','y','c','h','o','l','o','g','i','c','a','l','x','s'],
+            ['c','n','i','e','m','p','g','c','z','e','d','e','w','k','h'],
+            ['u','c','r','n','t','l','l','l','e','a','d','e','r','g','v'],
+            ['t','r','u','s','t','c','d','a','d','o','w','n','t','i','m'],
+            ['s','j','h','e','n','n','m','e','h','u','m','a','n','t','n'],
+            ['q','w','e','l','l','b','e','i','n','g','q','b','e','e','e'],
+            ['s','v','r','e','s','i','l','i','e','n','c','e','g','x','l'],
+            ['f','k','u','i','p','w','c','h','a','n','g','e','p','m','j'],
         ];
 
         const grid = document.getElementById("grid");
@@ -116,7 +114,7 @@ function isStraightLine(cells) {
         return;
     }
     const selectedWord = selectedCells.map(cell => cell.textContent).join("").toLowerCase();
-    const reversedWord = selectedWord.split("").reverse().join("");
+    const reversedWord = selectedWord.split(""").reverse().join("");
     if (words.includes(selectedWord) || words.includes(reversedWord)) {
         selectedCells.forEach(cell => {
             cell.classList.remove("selected");
